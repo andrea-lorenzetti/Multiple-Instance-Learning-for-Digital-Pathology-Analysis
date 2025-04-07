@@ -4,6 +4,9 @@
 
 This project implements Multiple Instance Learning (MIL) techniques for analyzing whole slide images (WSIs) in digital pathology. The system processes high-resolution pathology images by dividing them into smaller patches (instances) and learning from bag-level labels (tumor/normal).
 
+### Note
+The dataset in this folder is not complete but is a lighter version intended for testing and experimentation.
+
 ## Key Features
 
 - **MIL Dataset Handling**: Custom PyTorch dataset for WSIs and patches
@@ -160,3 +163,29 @@ Several potential solutions were explored to address this task, but the results 
 ---
 
 ## Some plots
+## Training Plots
+
+### 1. Training Metrics with Normal BCE Loss
+- **Title**: Loss and Accuracy Over Epochs (Learning Rate = \(10^{-6}\), Instance Encoder: InstanceEncoder, Aggregation: MaxPool, Criterion: Normal BCE Loss)
+- **Description**: This plot shows the loss and accuracy metrics during the training phase for the model using a learning rate of \(10^{-6}\). The `InstanceEncoder` with max-pooling aggregation is utilized, demonstrating how the model's performance evolves over 20 epochs.
+- **Image**: ![Loss and Accuracy Over Epochs (Normal BCE Loss)](plots/output_image_0.png)
+
+### 2. Training Metrics with Weighted BCE Loss
+- **Title**: Loss and Accuracy Over Epochs (Learning Rate = \(10^{-6}\), Instance Encoder: InstanceEncoder, Aggregation: MaxPool, Criterion: Weighted BCE Loss)
+- **Description**: This plot illustrates the loss and accuracy metrics during the training phase for the model using a learning rate of \(10^{-6}\) with a weighted BCE loss function. It highlights the impact of addressing class imbalance on the model's performance over 20 epochs.
+- **Image**: ![Loss and Accuracy Over Epochs (Weighted BCE Loss)](plots/output_image_1.png)
+
+### 3. Training Metrics with Weighted BCE Loss (Higher Learning Rate)
+- **Title**: Loss and Accuracy Over Epochs (Learning Rate = \(10^{-4}\), Instance Encoder: InstanceEncoder, Aggregation: MaxPool, Criterion: Weighted BCE Loss)
+- **Description**: This plot presents the loss and accuracy metrics during the training phase for the model using a learning rate of \(10^{-4}\) and a weighted BCE loss function. It captures the model's performance dynamics across 20 epochs, showcasing how a higher learning rate influences training.
+- **Image**: ![Loss and Accuracy Over Epochs (Weighted BCE Loss)](plots/output_image_2.png)
+
+### 4. Training Metrics with Weighted BCE Loss (Lower Learning Rate)
+- **Title**: Loss and Accuracy Over Epochs (Learning Rate = \(10^{-8}\), Instance Encoder: InstanceEncoder, Aggregation: MaxPool, Criterion: Weighted BCE Loss)
+- **Description**: This plot depicts the loss and accuracy metrics during the training phase for the model using a learning rate of \(10^{-8}\) with a weighted BCE loss function. It analyzes the effects of a significantly lower learning rate on the training process over 20 epochs.
+- **Image**: ![Loss and Accuracy Over Epochs (Lower Learning Rate)](plots/output_image_3.png)
+
+### 5. Training Metrics with Attention Implementation
+- **Title**: Loss and Accuracy Over Epochs (Learning Rate = \(10^{-4}\), Instance Encoder: Attention-Based, Criterion: Weighted BCE Loss)
+- **Description**: This plot showcases the loss and accuracy metrics during the training phase for the model utilizing an attention-based instance encoder with a learning rate of \(10^{-4}\) and a weighted BCE loss function. It highlights the performance of the model across 20 epochs and the advantages of the attention mechanism in addressing instance importance.
+- **Image**: ![Loss and Accuracy Over Epochs (Attention Implementation)](plots/output_image_4.png)
