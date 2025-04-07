@@ -20,7 +20,7 @@ The dataset in this folder is not complete but is a lighter version intended for
 
 ```bash
 git clone [repository-url]
-cd mil-pathology
+cd Multiple-Instance-Learning-for-Digital-Pathology-Analysis
 pip install -r requirements.txt
 ```
 
